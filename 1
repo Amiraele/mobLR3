@@ -1,0 +1,38 @@
+class Picture(val name:String, val author:String, val material:String, val country:String,
+              val year:Int, val height:Int, val width:Int){
+
+    fun era(){
+        if (year>1300 && year<1500){
+            println("$name - Эпоха Возрождения (Ренессанс)")
+        }
+        if (year>1500 && year<1800){
+            println("$name - Классицизм")
+        }
+        if (year>1874 && year<1920){
+            println("$name - Импрессионизм")
+        }
+        if (year>1921 && year<2022){
+            println("$name - Сюрреализм")
+        }
+    }
+    fun opisanie(){
+        println("Картина $name написана художником $author в $year году. Материал, выбранный автором - $material. " +
+                "Высота картины $height см, ширина $width см.")
+    }
+    fun size_metr(){
+        if (height>=100){
+            println("${height/100} м ${height%100} см")
+        }
+        if (width>=100){
+            println("${width/100} м ${width%100} см")
+        }
+    }
+
+}
+
+fun main(){
+    var p1 = Picture("Мона Лиза", "Леонардо да Винчи", "масло","Италия",1519,76,53)
+    p1.era()
+    p1.opisanie()
+    p1.size_metr()
+}
